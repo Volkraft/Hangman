@@ -128,7 +128,7 @@ footer{
 } */
 /* Grid styles */
 .container {
-  max-width: 1140px;
+  max-width: 1440px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -172,4 +172,68 @@ select:-webkit-autofill:focus {
 /* Sticky Footer */
 .footer {
   margin-top: auto; /* sticky footer */
+}
+
+body {
+  background-color: #f6f3e9;
+}
+
+.picture {
+  max-width: 800px;
+}
+
+.main {
+  padding-top: 100px;
+}
+.main__content {
+  display: flex;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+}
+
+.question {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.template {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  margin-bottom: 50px;
+}
+
+.errors__title {
+  font-size: 25px;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.errors__counter {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.errors__current-counter {
+  color: red;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 450px;
+  gap: 5px;
+}
+.keyboard__key {
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 12px;
+  text-transform: uppercase;
+  padding: 10px;
 }/*# sourceMappingURL=main.css.map */
