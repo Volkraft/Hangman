@@ -3,7 +3,6 @@ export default class Model {
         this.question = '';
         this.secretWord = '';
         this.getRandom(this.questions)
-        console.log(this.question, this.secretWord);
         
     }
     questions = [
@@ -16,7 +15,7 @@ export default class Model {
         ['What is the chemical name for table salt?', 'Sodium chloride'],
         ['What is the process by which plants make their food called?', 'Photosynthesis'],
         ['Which famous scientist formulated the theory of relativity?', 'Albert Einstein'],
-        ['What is the largest ocean on Earth?', 'Pacific Ocean'],
+        ['What is the largest ocean on Earth?', 'Pacific O  cean'],
     ]
     
 
