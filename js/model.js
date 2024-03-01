@@ -1,6 +1,10 @@
 export default class Model {
     constructor(){
+        this.question = '';
+        this.secretWord = '';
         this.getRandom(this.questions)
+        console.log(this.question, this.secretWord);
+        
     }
     questions = [
         ['What is the capital of Japan?', 'Tokyo'],
@@ -19,6 +23,7 @@ export default class Model {
     getRandom(questions){
         const randomIndex = Math.floor(Math.random() * questions.length);
         const currentCouple = questions[randomIndex];
-        console.log(currentCouple);
+        this.question = currentCouple[0];
+        this.secretWord = currentCouple[1];
     }
 }
