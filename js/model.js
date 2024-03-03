@@ -17,6 +17,11 @@ export default class Model {
         ['Which famous scientist formulated the theory of relativity?', 'Albert Einstein'],
         ['What is the largest ocean on Earth?', 'Pacific O  cean'],
     ]
+    keyboard = [
+        'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 
+        'g', 'h', 'j','k', 'l','z','x','c','v','b','n','m',
+        '_________________________'
+        ];
     
 
     getRandom(questions){

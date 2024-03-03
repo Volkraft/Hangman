@@ -1,7 +1,8 @@
 export default class View {
-    constructor(strQuestion, secretWord){
+    constructor(strQuestion, secretWord, renderKeyboard){
         this.renderQuestion(strQuestion);
         this.renderTemplateSecretWord(secretWord);
+        this.renderKeyboard(renderKeyboard);
         
     }
     renderQuestion(strQuestion){
@@ -16,6 +17,19 @@ export default class View {
             li.innerText = '_';
             template.insertAdjacentElement('beforeend', li);
         }
-        console.log(secretWord.length);
+    }
+    renderKeyboard(keyboard){
+        console.log(keyboard);
+        const ul = document.querySelector('.keyboard')
+        for (let index = 0; index < keyboard.length; index++) {
+            const li = document.createElement('li');
+            li.classList.add('keyboard__item');
+            const button = document.createElement('button');
+            button.classList.add('keyboard__key');
+            button.innerText = keyboard[index]
+            li.insertAdjacentElement('afterbegin', button);
+            ul.insertAdjacentElement('beforeend', li);
+            
+        }
     }
 }
