@@ -26,7 +26,11 @@ export default class View {
             li.classList.add('keyboard__item');
             const button = document.createElement('button');
             button.classList.add('keyboard__key');
-            button.innerText = keyboard[index]
+            button.innerText = keyboard[index];
+            if (index === keyboard.length - 1){
+                button.innerText = '_________________';
+            }
+            button.dataset.key = keyboard[index];
             li.insertAdjacentElement('afterbegin', button);
             ul.insertAdjacentElement('beforeend', li);
             
