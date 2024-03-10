@@ -5,6 +5,9 @@ export default class View {
         this.renderKeyboard(renderKeyboard);
         
     }
+    elements = {
+        keyboard: document.querySelector('.keyboard')
+    };
     renderQuestion(strQuestion){
         const question = document.querySelector('.question');
         question.innerText = strQuestion;
@@ -19,8 +22,7 @@ export default class View {
         }
     }
     renderKeyboard(keyboard){
-        console.log(keyboard);
-        const ul = document.querySelector('.keyboard')
+        
         for (let index = 0; index < keyboard.length; index++) {
             const li = document.createElement('li');
             li.classList.add('keyboard__item');
@@ -32,7 +34,7 @@ export default class View {
             }
             button.dataset.key = keyboard[index];
             li.insertAdjacentElement('afterbegin', button);
-            ul.insertAdjacentElement('beforeend', li);
+            this.elements.keyboard.insertAdjacentElement('beforeend', li);
             
         }
     }

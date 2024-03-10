@@ -15,7 +15,7 @@ export default class Model {
         ['What is the chemical name for table salt?', 'Sodium chloride'],
         ['What is the process by which plants make their food called?', 'Photosynthesis'],
         ['Which famous scientist formulated the theory of relativity?', 'Albert Einstein'],
-        ['What is the largest ocean on Earth?', 'Pacific O  cean'],
+        ['What is the largest ocean on Earth?', 'Pacific Ocean'],
     ]
     keyboard = [
         'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 
@@ -29,5 +29,17 @@ export default class Model {
         const currentCouple = questions[randomIndex];
         this.question = currentCouple[0];
         this.secretWord = currentCouple[1];
+    }
+    checkKeyInWord(keyData){
+        const objectGuess  = {
+            letter: keyData,
+            indexs: [],
+        }
+        for (let index = 0; index < this.secretWord.length; index++) {
+            if (this.secretWord[index].toLowerCase() ===  keyData){
+                objectGuess.indexs.push([index]);
+            }
+        }
+        console.log(objectGuess);
     }
 }
