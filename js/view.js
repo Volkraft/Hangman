@@ -38,4 +38,17 @@ export default class View {
             
         }
     }
+
+    renderLetter(objectGuess){     
+        const templateItem = document.querySelectorAll('.template-item') 
+        for (let i = 0; i < templateItem.length; i++) {
+            for (let j = 0; j < objectGuess.indexs.length; j++) {
+                if (i === objectGuess.indexs[j]) {
+                    templateItem[i].innerText = objectGuess.letter;
+                }
+            }
+            
+        }
+    }
+
 }

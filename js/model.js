@@ -3,6 +3,7 @@ export default class Model {
         this.question = '';
         this.secretWord = '';
         this.getRandom(this.questions)
+
         
     }
     questions = [
@@ -32,14 +33,17 @@ export default class Model {
     }
     checkKeyInWord(keyData){
         const objectGuess  = {
-            letter: keyData,
+            letter: null,
             indexs: [],
         }
         for (let index = 0; index < this.secretWord.length; index++) {
             if (this.secretWord[index].toLowerCase() ===  keyData){
-                objectGuess.indexs.push([index]);
+                objectGuess.indexs.push(index);
+                objectGuess.letter = keyData;
+
             }
+            
         }
-        console.log(objectGuess);
+        return objectGuess;
     }
 }
