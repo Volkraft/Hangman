@@ -3,8 +3,7 @@ export default class Model {
         this.question = '';
         this.secretWord = '';
         this.getRandom(this.questions)
-
-        
+        this.counter = 0;
     }
     questions = [
         ['What is the capital of Japan?', 'Tokyo'],
@@ -45,5 +44,12 @@ export default class Model {
             
         }
         return objectGuess;
+    }
+    counterMistake(letter){
+        if (this.secretWord.indexOf(letter) === -1){
+            this.counter++;
+
+        }
+        // console.log(this.counter);
     }
 }

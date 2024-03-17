@@ -1,8 +1,9 @@
 export default class View {
-    constructor(strQuestion, secretWord, renderKeyboard){
+    constructor(strQuestion, secretWord, renderKeyboard, counter){
         this.renderQuestion(strQuestion);
         this.renderTemplateSecretWord(secretWord);
         this.renderKeyboard(renderKeyboard);
+        this.renderMistakeCounter(counter);
         
     }
     elements = {
@@ -51,8 +52,14 @@ export default class View {
         }
     }
 
+    renderMistakeCounter(counter){
+        const currentCounter = document.querySelector('.errors__current-counter');
+        currentCounter.innerText = counter
+    }
+
 }
 
 // 1. Физ. клавиатура
-// 2. Проверка что буква есть в слове
+// 2. Проверка что буква есть в слове + 
 // 3. Проверка что нажатая клавиша есть в массиве
+// 4. Проверка что клавиша уже была нажата
