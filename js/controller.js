@@ -13,3 +13,7 @@ view.elements.keyboard.addEventListener('click', (e) => {
     }
 
 })
+window.addEventListener('keyup', (e) => {
+    const keyData = e.key;
+    view.renderLetter(model.checkKeyInWord(keyData));
+})

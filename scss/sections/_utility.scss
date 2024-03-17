@@ -8,8 +8,10 @@
     display: flex;
     text-align: center;
     justify-content: center;
-    column-gap: 20px;
+    column-gap: 12px;
     margin-bottom: 50px;
+    font-size: 30px;
+    font-weight: 600;
 }
 .errors{
     &__title{

@@ -202,9 +202,11 @@ body {
   display: flex;
   text-align: center;
   justify-content: center;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
   margin-bottom: 50px;
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .errors__title {
