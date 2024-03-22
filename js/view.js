@@ -53,8 +53,9 @@ export default class View {
     }
 
     renderMistakeCounter(counter){
+        console.log(counter);
         const currentCounter = document.querySelector('.errors__current-counter');
-        currentCounter.innerText = counter
+        currentCounter.innerText = counter;
     }
 
 }

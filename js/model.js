@@ -23,7 +23,7 @@ export default class Model {
         ' '
         ];
     
-
+    checkedKeys = []
     getRandom(questions){
         const randomIndex = Math.floor(Math.random() * questions.length);
         const currentCouple = questions[randomIndex];
@@ -39,17 +39,20 @@ export default class Model {
             if (this.secretWord[index].toLowerCase() ===  keyData){
                 objectGuess.indexs.push(index);
                 objectGuess.letter = keyData;
-
             }
-            
         }
         return objectGuess;
     }
     counterMistake(letter){
         if (this.secretWord.indexOf(letter) === -1){
             this.counter++;
-
         }
-        // console.log(this.counter);
+        
+    }
+    checkedPressedKeys(key){
+        if (this.checkedKeys.indexOf(key) === -1){
+            this.checkedKeys.push(key);
+            console.log(this.checkedKeys);
+        }
     }
 }
