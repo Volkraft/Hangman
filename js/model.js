@@ -44,7 +44,7 @@ export default class Model {
         return objectGuess;
     }
     counterMistake(letter){
-        if (this.secretWord.indexOf(letter) === -1){
+        if (this.secretWord.indexOf(letter) === -1 && this.keyboard.indexOf(letter) !== -1){
             this.counter++;
         }
         
@@ -52,7 +52,8 @@ export default class Model {
     checkedPressedKeys(key){
         if (this.checkedKeys.indexOf(key) === -1){
             this.checkedKeys.push(key);
-            console.log(this.checkedKeys);
+            // console.log(this.checkedKeys);
+            
         }
     }
 }
