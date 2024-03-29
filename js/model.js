@@ -44,15 +44,19 @@ export default class Model {
         return objectGuess;
     }
     counterMistake(letter){
-        if (this.secretWord.indexOf(letter) === -1 && this.keyboard.indexOf(letter) !== -1){
+        if (this.secretWord.indexOf(letter) === -1 &&
+            this.checkedKeys.indexOf(letter) === -1 &&
+            this.keyboard.indexOf(letter) !== -1){
             this.counter++;
             console.log(this.counter);
         }
         
     }
     checkedPressedKeys(key){
-        if (this.checkedKeys.indexOf(key) === -1){
+        if (this.checkedKeys.indexOf(key) === -1){ 
             this.checkedKeys.push(key);
         }
     }
 }
+
+// 1. Блок кнопки виртуал и физ.
