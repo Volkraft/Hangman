@@ -57,5 +57,13 @@ export default class View {
         currentCounter.innerText = counter;
     }
 
+    lockButtons(array){
+        const buttons = document.querySelectorAll('.keyboard__key')
+        buttons.forEach(element => {
+            if (array.indexOf(element.dataset.key) !== -1 ){
+                element.classList.add('pressed');
+            }
+        });
+    }
 }
 

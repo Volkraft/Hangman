@@ -246,4 +246,8 @@ body {
 }
 .keyboard__key:active {
   transform: scale(0.9);
+}
+.keyboard__key.pressed {
+  background-color: rgb(109, 109, 109);
+  transition: background-color 0s;
 }/*# sourceMappingURL=main.css.map */

@@ -50,5 +50,9 @@
         &:active{
             transform: scale(0.9);
         }
+        &.pressed{
+            background-color: rgb(109, 109, 109);
+            transition: background-color 0s;
+        }
     }
 }

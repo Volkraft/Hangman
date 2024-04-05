@@ -24,6 +24,7 @@ export default class Model {
         ];
     
     checkedKeys = []
+    
     getRandom(questions){
         const randomIndex = Math.floor(Math.random() * questions.length);
         const currentCouple = questions[randomIndex];

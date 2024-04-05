@@ -11,6 +11,7 @@ view.elements.keyboard.addEventListener('click', (e) => {
         view.renderLetter(model.checkKeyInWord(keyData));
         view.renderMistakeCounter(model.counter)
         model.checkedPressedKeys(keyData)
+        view.lockButtons(model.checkedKeys)
     }
 
 })
@@ -20,4 +21,6 @@ window.addEventListener('keyup', (e) => {
     view.renderLetter(model.checkKeyInWord(keyData));
     view.renderMistakeCounter(model.counter)
     model.checkedPressedKeys(keyData)
+    view.lockButtons(model.checkedKeys)
 })
+
