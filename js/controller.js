@@ -16,7 +16,7 @@ view.elements.keyboard.addEventListener('click', (e) => {
 
 })
 window.addEventListener('keyup', (e) => {
-    const keyData = e.key;
+    const keyData = e.key.toLowerCase();
     model.counterMistake(keyData)
     view.renderLetter(model.checkKeyInWord(keyData));
     view.renderMistakeCounter(model.counter)
