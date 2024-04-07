@@ -4,6 +4,7 @@ export default class Model {
         this.secretWord = '';
         this.getRandom(this.questions)
         this.counter = 0;
+        this.isWin = false;
     }
     questions = [
         ['What is the capital of Japan?', 'tokyo'],
@@ -24,6 +25,8 @@ export default class Model {
         ];
     
     checkedKeys = []
+
+    guessedKeys = []
     
     getRandom(questions){
         const randomIndex = Math.floor(Math.random() * questions.length);
@@ -38,6 +41,8 @@ export default class Model {
         }
         for (let index = 0; index < this.secretWord.length; index++) {
             if (this.secretWord[index].toLowerCase() ===  keyData){
+                this.guessedKeys.push(keyData);
+                this.checkedWin()
                 objectGuess.indexs.push(index);
                 objectGuess.letter = keyData;
             }
@@ -49,7 +54,6 @@ export default class Model {
             this.checkedKeys.indexOf(letter) === -1 &&
             this.keyboard.indexOf(letter) !== -1){
             this.counter++;
-            console.log(this.counter);
         }
         
     }
@@ -58,6 +62,14 @@ export default class Model {
             this.checkedKeys.push(key);
         }
     }
+    checkedWin(){
+        if (this.guessedKeys.length === this.secretWord.length){
+            this.isWin = true;
+        };
+    }
 }
 
-// 1. Блок кнопки виртуал и физ.
+
+// 1. Создать массив отгаданых букв
+// 2. В массив пушить букву если она есть в слове
+// 3.Проверка на длину секрет ворда и массива отгаданых букв
