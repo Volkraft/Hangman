@@ -5,6 +5,7 @@ export default class Model {
         this.getRandom(this.questions)
         this.counter = 0;
         this.isWin = false;
+        this.isDef = false;
         this.isPlay = true;
     }
     questions = [
@@ -60,6 +61,7 @@ export default class Model {
             this.keyboard.indexOf(letter) !== -1){
             this.counter++;
         }
+        this.checkedDef()
         
     }
     checkedPressedKeys(key){
@@ -73,5 +75,12 @@ export default class Model {
             console.log('Ты победил');
             this.isPlay = false;
         };
+    }
+    checkedDef(){
+        if (this.counter > 5){
+            this.isDef = true;
+            console.log('Ты проиграл');
+            this.isPlay = false;
+        }
     }
 }
