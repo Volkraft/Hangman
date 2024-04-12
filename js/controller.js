@@ -10,7 +10,14 @@ const eventHandler = (keyData) => {
     view.renderMistakeCounter(model.counter)
     model.checkedPressedKeys(keyData)
     view.lockButtons(model.checkedKeys)
+    if (model.isWin){
+        view.showStatus(true)
     }
+    else if (model.isDef){
+        view.showStatus(false)
+    }
+    }
+
 };
 view.elements.keyboard.addEventListener('click', (e) => {
     const keyBtn = e.target.closest('.keyboard__key');

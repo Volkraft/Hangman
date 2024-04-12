@@ -65,5 +65,10 @@ export default class View {
             }
         });
     }
+    showStatus(flag){
+        //1. Принять флаги от модели
+        //2. Взависимости от флага отображать правильное окно.
+        console.log(flag);
+    }
 }
 
