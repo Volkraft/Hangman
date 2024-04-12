@@ -5,6 +5,7 @@ export default class Model {
         this.getRandom(this.questions)
         this.counter = 0;
         this.isWin = false;
+        this.isPlay = true;
     }
     questions = [
         ['What is the capital of Japan?', 'tokyo'],
@@ -34,20 +35,24 @@ export default class Model {
         this.question = currentCouple[0];
         this.secretWord = currentCouple[1];
     }
+
     checkKeyInWord(keyData){
-        const objectGuess  = {
-            letter: null,
-            indexs: [],
-        }
-        for (let index = 0; index < this.secretWord.length; index++) {
-            if (this.secretWord[index].toLowerCase() ===  keyData){
-                this.guessedKeys.push(keyData);
-                this.checkedWin()
-                objectGuess.indexs.push(index);
-                objectGuess.letter = keyData;
+            const objectGuess  = {
+                letter: null,
+                indexs: [],
             }
-        }
-        return objectGuess;
+            if(this.guessedKeys.indexOf(keyData) === -1 ){
+                for (let index = 0; index < this.secretWord.length; index++) {
+                    if (this.secretWord[index].toLowerCase() ===  keyData){
+                        this.guessedKeys.push(keyData);
+                        this.checkedWin()
+                        objectGuess.indexs.push(index);
+                        objectGuess.letter = keyData;
+                    }
+                }
+            }
+            return objectGuess;
+
     }
     counterMistake(letter){
         if (this.secretWord.indexOf(letter) === -1 &&
@@ -65,11 +70,8 @@ export default class Model {
     checkedWin(){
         if (this.guessedKeys.length === this.secretWord.length){
             this.isWin = true;
+            console.log('Ты победил');
+            this.isPlay = false;
         };
     }
 }
-
-
-// 1. Создать массив отгаданых букв
-// 2. В массив пушить букву если она есть в слове
-// 3.Проверка на длину секрет ворда и массива отгаданых букв
