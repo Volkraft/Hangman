@@ -8,6 +8,9 @@ const eventHandler = (keyData) => {
     model.counterMistake(keyData)
     view.renderLetter(model.checkKeyInWord(keyData));
     view.renderMistakeCounter(model.counter)
+    if (model.counter > 0){
+        view.renderLooser(model.partBodyLooser[model.counter - 1])
+    }
     model.checkedPressedKeys(keyData)
     view.lockButtons(model.checkedKeys)
     if (model.isWin){
@@ -30,3 +33,5 @@ window.addEventListener('keyup', (e) => {
     const keyData = e.key.toLowerCase();
     eventHandler(keyData);
 })
+// 1. Привязать рендер неудачника к счетчику
+// 2. 

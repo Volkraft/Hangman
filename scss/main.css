@@ -182,6 +182,13 @@ body {
   max-width: 800px;
 }
 
+#canvas {
+  background-image: url(../img/gallows.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .status {
   position: fixed;
   top: 0;

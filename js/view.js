@@ -84,5 +84,16 @@ export default class View {
         `
         document.body.insertAdjacentHTML('beforeend', status);
     }
+    renderLooser(objPartBody){
+            const canvas = document.getElementById("canvas");
+            if (canvas.getContext) {
+                const ctx = canvas.getContext("2d");
+                const img = new Image();
+                img.addEventListener('load', () => {
+                    ctx.drawImage(img, objPartBody.xPosition, objPartBody.yPosition, objPartBody.width, objPartBody.height);
+                })
+                img.src = `./img/${objPartBody.name}.png`; 
+            }
+    }
 }
 

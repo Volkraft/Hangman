@@ -29,6 +29,51 @@ export default class Model {
     checkedKeys = []
 
     guessedKeys = []
+
+    partBodyLooser = [
+        {
+            name: 'HeadPudge',
+            xPosition: 360,
+            yPosition: 240,
+            width: 70,
+            height: 70,
+        },
+        {
+            name: 'BodyPudge',
+            xPosition: 335,
+            yPosition: 252,
+            width: 120,
+            height: 130,
+        },
+        {
+            name: 'LeftHandPudge',
+            xPosition: 421,
+            yPosition: 253,
+            width: 70,
+            height: 70,
+        },
+        {
+            name: 'RightHandPudge',
+            xPosition: 305,
+            yPosition: 253,
+            width: 70,
+            height: 70,
+        },
+        {
+            name: 'LeftLegPudge',
+            xPosition: 400,
+            yPosition: 350,
+            width: 70,
+            height: 70,
+        },
+        {
+            name: 'RightLegPudge',
+            xPosition: 329,
+            yPosition: 352,
+            width: 70,
+            height: 70,
+        },
+    ]
     
     getRandom(questions){
         const randomIndex = Math.floor(Math.random() * questions.length);
