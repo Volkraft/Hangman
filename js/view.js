@@ -95,5 +95,10 @@ export default class View {
                 img.src = `./img/${objPartBody.name}.png`; 
             }
     }
+    renderSound(srcSound){
+        const audioObj = new Audio();
+        audioObj.src = `./sounds/${srcSound}.mp3`;
+        audioObj.play()
+    }
 }
 

@@ -7,6 +7,7 @@ export default class Model {
         this.isWin = false;
         this.isDef = false;
         this.isPlay = true;
+        this.currentSound = null;
     }
     questions = [
         ['What is the capital of Japan?', 'tokyo'],
@@ -74,7 +75,12 @@ export default class Model {
             height: 70,
         },
     ]
-    
+    sounds = {
+        victory: 'victory',
+        loose: 'gameOver',
+        error: 'erro',
+        bonus: 'bonus',
+    }
     getRandom(questions){
         const randomIndex = Math.floor(Math.random() * questions.length);
         const currentCouple = questions[randomIndex];
@@ -94,6 +100,7 @@ export default class Model {
                         this.checkedWin()
                         objectGuess.indexs.push(index);
                         objectGuess.letter = keyData;
+                        this.currentSound = this.sounds.bonus;
                     }
                 }
             }
@@ -105,6 +112,7 @@ export default class Model {
             this.checkedKeys.indexOf(letter) === -1 &&
             this.keyboard.indexOf(letter) !== -1){
             this.counter++;
+            this.currentSound = this.sounds.error;
         }
         this.checkedDef()
         
@@ -117,15 +125,16 @@ export default class Model {
     checkedWin(){
         if (this.guessedKeys.length === this.secretWord.length){
             this.isWin = true;
-            console.log('Ты победил');
             this.isPlay = false;
+            this.currentSound = this.sounds.victory;
+
         };
     }
     checkedDef(){
         if (this.counter > 5){
             this.isDef = true;
-            console.log('Ты проиграл');
             this.isPlay = false;
+            this.currentSound = this.sounds.loose;
         }
     }
 }
