@@ -8,8 +8,10 @@ const eventHandler = (keyData) => {
         model.counterMistake(keyData)
         view.renderLetter(model.checkKeyInWord(keyData));
         view.renderMistakeCounter(model.counter)
-        if (model.counter < 6){
-            view.renderSound(model.currentSound);
+        if (model.checkedKeys.indexOf(keyData) === -1) {
+            if (model.counter < 6){
+                view.renderSound(model.currentSound);
+            }
         }
         if (model.counter > 0){
             view.renderLooser(model.partBodyLooser[model.counter - 1])
