@@ -17,10 +17,12 @@ const eventHandler = (keyData) => {
         if (model.isWin){
             view.showStatus(true)
             view.renderSound(model.sounds.victory)
+            restart()
         }
         else if (model.isDef){
             view.showStatus(false)
             view.renderSound(model.currentSound);
+            restart()
         }
         model.checkedPressedKeys(keyData)
         view.lockButtons(model.checkedKeys)
@@ -38,3 +40,12 @@ window.addEventListener('keyup', (e) => {
     const keyData = e.key.toLowerCase();
     eventHandler(keyData);
 })
+const restart = () =>{
+    document.querySelector('#status-restart').addEventListener('click', () => {
+        model.restart(); 
+        view.restart();
+        view.renderQuestion(model.question)
+        view.renderTemplateSecretWord(model.secretWord);
+        view.renderMistakeCounter(model.counter);
+    })
+}

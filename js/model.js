@@ -137,4 +137,18 @@ export default class Model {
             this.currentSound = this.sounds.loose;
         }
     }
+
+    restart(){
+        this.question = '';
+        this.secretWord = '';
+        this.getRandom(this.questions)
+        this.counter = 0;
+        this.isWin = false;
+        this.isDef = false;
+        this.isPlay = true;
+        this.currentSound = null;
+        this.guessedKeys.splice(0, this.guessedKeys.length);
+        this.checkedKeys.splice(0, this.checkedKeys.length);
+
+    }
 }

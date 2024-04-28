@@ -7,7 +7,7 @@ export default class View {
         
     }
     elements = {
-        keyboard: document.querySelector('.keyboard')
+        keyboard: document.querySelector('.keyboard'),
     };
     renderQuestion(strQuestion){
         const question = document.querySelector('.question');
@@ -69,11 +69,11 @@ export default class View {
         let title = flag ? 'You win' : 'You loose';
         let imgName = flag ? 'happySmile' : 'sadSmile';
         const status = `
-        <div class="status">
+        <div class="status" id="status">
         <div class="status-popup">
         <p class="status-title">${title}</p>
             <img class="status-picture" src="./img/${imgName}.png" alt="">
-            <button class="status-restart">
+            <button class="status-restart" id="status-restart">
                 <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 2.99988C16.9706 2.99988 21 7.02931 21 11.9999C21 16.9704 16.9706 20.9999 12 20.9999C7.02944 20.9999 3 16.9704 3 11.9999C3 9.17261 4.30367 6.64983 6.34267 4.99988" stroke="#292929" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M3 4.49988H7V8.49988" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -100,5 +100,23 @@ export default class View {
         audioObj.src = `./sounds/${srcSound}.mp3`;
         audioObj.play()
     }
+    restart(){
+        document.querySelector('#status').remove();
+        const template = document.querySelectorAll('.template-item')
+        template.forEach(element => {
+            element.remove();
+        });
+        const buttons = document.querySelectorAll('.keyboard__key')
+        buttons.forEach(element => {
+            element.classList.remove('pressed')
+        });
+        const canvas = document.getElementById("canvas");
+        if (canvas.getContext) {
+            const ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    }
 }
-
+// 1. Передавать из модели новые данные
+// 2. Очистка канваса
+// 3. 
