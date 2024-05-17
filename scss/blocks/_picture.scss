@@ -1,9 +1,21 @@
 .picture{
-    max-width: 800px;
 }
 #canvas{
     background-image: url(../img/gallows.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    @media (max-width: 1440px) {
+        width: 700px;
+        height: 500px;
+        
+    }
+    @media (max-width: 1180px) {
+        height: 400px;
+        width: 600px;
+    }
+    @media (max-width: 550px) {
+        height: 300px;
+        width: 400px;
+    }
 }

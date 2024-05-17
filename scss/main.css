@@ -178,15 +178,29 @@ body {
   background-color: #f6f3e9;
 }
 
-.picture {
-  max-width: 800px;
-}
-
 #canvas {
   background-image: url(../img/gallows.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+@media (max-width: 1440px) {
+  #canvas {
+    width: 700px;
+    height: 500px;
+  }
+}
+@media (max-width: 1180px) {
+  #canvas {
+    height: 400px;
+    width: 600px;
+  }
+}
+@media (max-width: 550px) {
+  #canvas {
+    height: 300px;
+    width: 400px;
+  }
 }
 
 .status {
@@ -238,20 +252,38 @@ body {
   border-radius: 40%;
 }
 
-.main {
-  padding-top: 100px;
-}
 .main__content {
+  padding-top: 100px;
   display: flex;
-  -moz-column-gap: 50px;
-       column-gap: 50px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+@media (max-width: 1180px) {
+  .main__content {
+    justify-content: center;
+    gap: 30px;
+    padding-top: 30px;
+  }
+}
+
+.utility {
+  max-width: 450px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+@media (max-width: 1180px) {
+  .utility {
+    max-width: 100%;
+  }
 }
 
 .question {
   text-align: center;
   font-size: 30px;
   font-weight: 500;
-  margin-bottom: 50px;
 }
 
 .template {
@@ -260,7 +292,6 @@ body {
   justify-content: center;
   -moz-column-gap: 12px;
        column-gap: 12px;
-  margin-bottom: 50px;
   font-size: 30px;
   font-weight: 600;
 }
@@ -269,12 +300,10 @@ body {
   font-size: 25px;
   text-align: center;
   font-weight: 500;
-  margin-bottom: 15px;
 }
 .errors__counter {
   font-size: 20px;
   text-align: center;
-  margin-bottom: 50px;
 }
 .errors__current-counter {
   color: red;
